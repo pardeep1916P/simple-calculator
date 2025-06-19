@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: minmax(100px, auto) repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  background-color: hsl(220, 6%, 15%);
+  padding: 1rem;
+  border-radius: 20px;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 360px;
+}
+
+.calculator > .output {
+  grid-column: 1 / -1;
+  background-color: hsl(220, 6%, 20%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0.75rem;
+  font-size: 2rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-height: 80px;
+}
+
+.output .prev-display {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 65%);
+}
+
+.calculator button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: hsl(230, 6%, 25%);
+  color: hsl(204, 100%, 58%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  padding: 0.75rem;
+}
+
+.calculator button:hover {
+  background-color: hsl(230, 6%, 35%);
+  transform: scale(1.03);
+}
+
+.calculator button:active {
+  transform: scale(0.97);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+
+@media (max-width: 450px) {
+  .calculator {
+    max-width: 90vw;
+    gap: 0.75rem;
+  }
+
+  .calculator button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  .calculator > .output {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+  }
+
+  .output .prev-display {
+    font-size: 1rem;
+  }
+}
