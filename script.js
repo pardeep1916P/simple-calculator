@@ -105,7 +105,7 @@ document.addEventListener("keydown", (e) => {
         operation = undefined;
         prevDisplay.innerText = "";
       }
-    }
+  }
   } else if (key === "Escape") {
     clearDisplay();
   }
